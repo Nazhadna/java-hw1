@@ -17,15 +17,15 @@ public class MyPolynomial {
 
     @Override
     public String toString() {
-        String str = new String();
+        StringBuilder strB = new StringBuilder();
 
         for (int i = coeffs.length - 1; i > 1; i--) {
-            str += coeffs[i] + "x^" + i + "+";
+            strB.append(coeffs[i]).append("x^").append(i).append("+");
         }
 
-        str += coeffs[1] + "x+" + coeffs[0];
+        strB.append(coeffs[1]).append("x+").append(coeffs[0]);
 
-        return str;
+        return strB.toString();
     }
 
     public double evaluate(double x) {
